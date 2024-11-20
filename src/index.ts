@@ -8,6 +8,10 @@ const app = new Hono();
 
 app.use("*", cors());
 
+app.get("/", (c) => {
+  return c.json("it works")
+}
+
 // Fetch all music
 app.get('/musics', async (c) => {
   const title = c.req.query("title"); // Extract 'title' query parameter
